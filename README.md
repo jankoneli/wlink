@@ -8,7 +8,7 @@ wlink is a simple link shortener written in NodeJS, designed to be used with mne
 Wlink can be immediately cloned and run using these commands below:
 ### Linux and Windows:
 `
-git clone https://github.com/jankoneli/wlink.git && cd wlink && npm i && npm start
+git clone https://github.com/jankoneli/wlink.git && cd wlink && npm i && node index.js
 `
 ### Detached Running (Always On)
 Get into your directory where the repository is located, and run `npm i forever -g && forever start index.js` to run detached instance.
