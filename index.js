@@ -46,9 +46,9 @@ io.on('connection', (socket) => {
         const num1 = (Number("0x"+newHash.toString().slice(0,3)))/2;
         const num2 = (Number("0x"+newHash.toString().slice(3,6)))/2;
         if(!db.get('savedlinks').find({url:longurl}).value()){
-            socket.emit("shortenedurl", fs.readFileSync("bip.txt").toString().split("\r\n")[parseInt(num1)], fs.readFileSync("bip.txt").toString().split("\r\n")[parseInt(num2)])
+            socket.emit("shortenedurl", fs.readFileSync("bip.txt").toString().split("\n")[parseInt(num1)], fs.readFileSync("bip.txt").toString().split("\n")[parseInt(num2)])
             db.get("savedlinks").push({
-                wordlink:fs.readFileSync("bip.txt").toString().split("\r\n")[parseInt(num1)]+" "+fs.readFileSync("bip.txt").toString().split("\r\n")[parseInt(num2)],
+                wordlink:fs.readFileSync("bip.txt").toString().split("\n")[parseInt(num1)]+" "+fs.readFileSync("bip.txt").toString().split("\n")[parseInt(num2)],
                 url:longurl
             }).write();
         }else{
